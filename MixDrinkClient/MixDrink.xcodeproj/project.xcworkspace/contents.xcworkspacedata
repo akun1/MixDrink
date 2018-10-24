@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../MixDrink/_images"
+      name = "_images">
+      <FileRef
+         location = "group:btn-1.png">
+      </FileRef>
+      <FileRef
+         location = "group:whiteButton@2x.png">
+      </FileRef>
+      <FileRef
+         location = "group:logo.jpg">
+      </FileRef>
+      <FileRef
+         location = "group:whiteButton.png">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "self:MixDrink.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,651 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30F7DCC8217EB7F2003F6EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7DCC7217EB7F2003F6EDA /* AppDelegate.swift */; };
+		30F7DCCA217EB7F2003F6EDA /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7DCC9217EB7F2003F6EDA /* LauncherViewController.swift */; };
+		30F7DCCD217EB7F2003F6EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F7DCCB217EB7F2003F6EDA /* Main.storyboard */; };
+		30F7DCCF217EB7F7003F6EDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F7DCCE217EB7F7003F6EDA /* Assets.xcassets */; };
+		30F7DCD2217EB7F7003F6EDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F7DCD0217EB7F7003F6EDA /* LaunchScreen.storyboard */; };
+		30F7DCDD217EB7F7003F6EDA /* MixDrinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7DCDC217EB7F7003F6EDA /* MixDrinkTests.swift */; };
+		30F7DCE8217EB7F7003F6EDA /* MixDrinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7DCE7217EB7F7003F6EDA /* MixDrinkUITests.swift */; };
+		C02BF98E217FE86F00820DD8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BF98D217FE86F00820DD8 /* Theme.swift */; };
+		C02BF991217FEEBF00820DD8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BF990217FEEBF00820DD8 /* LoginViewController.swift */; };
+		C02BF993217FF15E00820DD8 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BF992217FF15E00820DD8 /* Me.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30F7DCD9217EB7F7003F6EDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30F7DCBC217EB7F2003F6EDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30F7DCC3217EB7F2003F6EDA;
+			remoteInfo = MixDrink;
+		};
+		30F7DCE4217EB7F7003F6EDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30F7DCBC217EB7F2003F6EDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30F7DCC3217EB7F2003F6EDA;
+			remoteInfo = MixDrink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		30F7DCC4217EB7F2003F6EDA /* MixDrink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MixDrink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F7DCC7217EB7F2003F6EDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		30F7DCC9217EB7F2003F6EDA /* LauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherViewController.swift; sourceTree = "<group>"; };
+		30F7DCCC217EB7F2003F6EDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		30F7DCCE217EB7F7003F6EDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30F7DCD1217EB7F7003F6EDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		30F7DCD3217EB7F7003F6EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30F7DCD8217EB7F7003F6EDA /* MixDrinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixDrinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F7DCDC217EB7F7003F6EDA /* MixDrinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixDrinkTests.swift; sourceTree = "<group>"; };
+		30F7DCDE217EB7F7003F6EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30F7DCE3217EB7F7003F6EDA /* MixDrinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixDrinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F7DCE7217EB7F7003F6EDA /* MixDrinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixDrinkUITests.swift; sourceTree = "<group>"; };
+		30F7DCE9217EB7F7003F6EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C02BF98D217FE86F00820DD8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C02BF990217FEEBF00820DD8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C02BF992217FF15E00820DD8 /* Me.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30F7DCC1217EB7F2003F6EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F7DCD5217EB7F7003F6EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F7DCE0217EB7F7003F6EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30F7DCBB217EB7F2003F6EDA = {
+			isa = PBXGroup;
+			children = (
+				30F7DCC6217EB7F2003F6EDA /* MixDrink */,
+				30F7DCDB217EB7F7003F6EDA /* MixDrinkTests */,
+				30F7DCE6217EB7F7003F6EDA /* MixDrinkUITests */,
+				30F7DCC5217EB7F2003F6EDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30F7DCC5217EB7F2003F6EDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30F7DCC4217EB7F2003F6EDA /* MixDrink.app */,
+				30F7DCD8217EB7F7003F6EDA /* MixDrinkTests.xctest */,
+				30F7DCE3217EB7F7003F6EDA /* MixDrinkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30F7DCC6217EB7F2003F6EDA /* MixDrink */ = {
+			isa = PBXGroup;
+			children = (
+				C02BF98C217FE83C00820DD8 /* Extensions */,
+				C02BF98B217FE83400820DD8 /* Controllers */,
+				C02BF98A217FE82200820DD8 /* Views */,
+				C02BF989217FE81D00820DD8 /* Models */,
+				30F7DCC7217EB7F2003F6EDA /* AppDelegate.swift */,
+				30F7DCCB217EB7F2003F6EDA /* Main.storyboard */,
+				30F7DCCE217EB7F7003F6EDA /* Assets.xcassets */,
+				30F7DCD0217EB7F7003F6EDA /* LaunchScreen.storyboard */,
+				30F7DCD3217EB7F7003F6EDA /* Info.plist */,
+			);
+			path = MixDrink;
+			sourceTree = "<group>";
+		};
+		30F7DCDB217EB7F7003F6EDA /* MixDrinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				30F7DCDC217EB7F7003F6EDA /* MixDrinkTests.swift */,
+				30F7DCDE217EB7F7003F6EDA /* Info.plist */,
+			);
+			path = MixDrinkTests;
+			sourceTree = "<group>";
+		};
+		30F7DCE6217EB7F7003F6EDA /* MixDrinkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				30F7DCE7217EB7F7003F6EDA /* MixDrinkUITests.swift */,
+				30F7DCE9217EB7F7003F6EDA /* Info.plist */,
+			);
+			path = MixDrinkUITests;
+			sourceTree = "<group>";
+		};
+		C02BF989217FE81D00820DD8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C02BF994217FF19600820DD8 /* User */,
+				C02BF98F217FE8A100820DD8 /* General */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C02BF98A217FE82200820DD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C02BF98B217FE83400820DD8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				30F7DCC9217EB7F2003F6EDA /* LauncherViewController.swift */,
+				C02BF990217FEEBF00820DD8 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C02BF98C217FE83C00820DD8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C02BF98F217FE8A100820DD8 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				C02BF98D217FE86F00820DD8 /* Theme.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		C02BF994217FF19600820DD8 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C02BF992217FF15E00820DD8 /* Me.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30F7DCC3217EB7F2003F6EDA /* MixDrink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30F7DCEC217EB7F7003F6EDA /* Build configuration list for PBXNativeTarget "MixDrink" */;
+			buildPhases = (
+				30F7DCC0217EB7F2003F6EDA /* Sources */,
+				30F7DCC1217EB7F2003F6EDA /* Frameworks */,
+				30F7DCC2217EB7F2003F6EDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MixDrink;
+			productName = MixDrink;
+			productReference = 30F7DCC4217EB7F2003F6EDA /* MixDrink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		30F7DCD7217EB7F7003F6EDA /* MixDrinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30F7DCEF217EB7F7003F6EDA /* Build configuration list for PBXNativeTarget "MixDrinkTests" */;
+			buildPhases = (
+				30F7DCD4217EB7F7003F6EDA /* Sources */,
+				30F7DCD5217EB7F7003F6EDA /* Frameworks */,
+				30F7DCD6217EB7F7003F6EDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30F7DCDA217EB7F7003F6EDA /* PBXTargetDependency */,
+			);
+			name = MixDrinkTests;
+			productName = MixDrinkTests;
+			productReference = 30F7DCD8217EB7F7003F6EDA /* MixDrinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		30F7DCE2217EB7F7003F6EDA /* MixDrinkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30F7DCF2217EB7F7003F6EDA /* Build configuration list for PBXNativeTarget "MixDrinkUITests" */;
+			buildPhases = (
+				30F7DCDF217EB7F7003F6EDA /* Sources */,
+				30F7DCE0217EB7F7003F6EDA /* Frameworks */,
+				30F7DCE1217EB7F7003F6EDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30F7DCE5217EB7F7003F6EDA /* PBXTargetDependency */,
+			);
+			name = MixDrinkUITests;
+			productName = MixDrinkUITests;
+			productReference = 30F7DCE3217EB7F7003F6EDA /* MixDrinkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30F7DCBC217EB7F2003F6EDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Krista Capps";
+				TargetAttributes = {
+					30F7DCC3217EB7F2003F6EDA = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					30F7DCD7217EB7F7003F6EDA = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 30F7DCC3217EB7F2003F6EDA;
+					};
+					30F7DCE2217EB7F7003F6EDA = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 30F7DCC3217EB7F2003F6EDA;
+					};
+				};
+			};
+			buildConfigurationList = 30F7DCBF217EB7F2003F6EDA /* Build configuration list for PBXProject "MixDrink" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30F7DCBB217EB7F2003F6EDA;
+			productRefGroup = 30F7DCC5217EB7F2003F6EDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30F7DCC3217EB7F2003F6EDA /* MixDrink */,
+				30F7DCD7217EB7F7003F6EDA /* MixDrinkTests */,
+				30F7DCE2217EB7F7003F6EDA /* MixDrinkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30F7DCC2217EB7F2003F6EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F7DCD2217EB7F7003F6EDA /* LaunchScreen.storyboard in Resources */,
+				30F7DCCF217EB7F7003F6EDA /* Assets.xcassets in Resources */,
+				30F7DCCD217EB7F2003F6EDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F7DCD6217EB7F7003F6EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F7DCE1217EB7F7003F6EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30F7DCC0217EB7F2003F6EDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C02BF991217FEEBF00820DD8 /* LoginViewController.swift in Sources */,
+				C02BF98E217FE86F00820DD8 /* Theme.swift in Sources */,
+				30F7DCCA217EB7F2003F6EDA /* LauncherViewController.swift in Sources */,
+				C02BF993217FF15E00820DD8 /* Me.swift in Sources */,
+				30F7DCC8217EB7F2003F6EDA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F7DCD4217EB7F7003F6EDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F7DCDD217EB7F7003F6EDA /* MixDrinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F7DCDF217EB7F7003F6EDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F7DCE8217EB7F7003F6EDA /* MixDrinkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30F7DCDA217EB7F7003F6EDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30F7DCC3217EB7F2003F6EDA /* MixDrink */;
+			targetProxy = 30F7DCD9217EB7F7003F6EDA /* PBXContainerItemProxy */;
+		};
+		30F7DCE5217EB7F7003F6EDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30F7DCC3217EB7F2003F6EDA /* MixDrink */;
+			targetProxy = 30F7DCE4217EB7F7003F6EDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		30F7DCCB217EB7F2003F6EDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30F7DCCC217EB7F2003F6EDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		30F7DCD0217EB7F7003F6EDA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30F7DCD1217EB7F7003F6EDA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30F7DCEA217EB7F7003F6EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30F7DCEB217EB7F7003F6EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30F7DCED217EB7F7003F6EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U9T496487P;
+				INFOPLIST_FILE = MixDrink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		30F7DCEE217EB7F7003F6EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U9T496487P;
+				INFOPLIST_FILE = MixDrink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		30F7DCF0217EB7F7003F6EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B32NFB38L2;
+				INFOPLIST_FILE = MixDrinkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MixDrink.app/MixDrink";
+			};
+			name = Debug;
+		};
+		30F7DCF1217EB7F7003F6EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B32NFB38L2;
+				INFOPLIST_FILE = MixDrinkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MixDrink.app/MixDrink";
+			};
+			name = Release;
+		};
+		30F7DCF3217EB7F7003F6EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B32NFB38L2;
+				INFOPLIST_FILE = MixDrinkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MixDrink;
+			};
+			name = Debug;
+		};
+		30F7DCF4217EB7F7003F6EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B32NFB38L2;
+				INFOPLIST_FILE = MixDrinkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MixDrink;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30F7DCBF217EB7F2003F6EDA /* Build configuration list for PBXProject "MixDrink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F7DCEA217EB7F7003F6EDA /* Debug */,
+				30F7DCEB217EB7F7003F6EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30F7DCEC217EB7F7003F6EDA /* Build configuration list for PBXNativeTarget "MixDrink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F7DCED217EB7F7003F6EDA /* Debug */,
+				30F7DCEE217EB7F7003F6EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30F7DCEF217EB7F7003F6EDA /* Build configuration list for PBXNativeTarget "MixDrinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F7DCF0217EB7F7003F6EDA /* Debug */,
+				30F7DCF1217EB7F7003F6EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30F7DCF2217EB7F7003F6EDA /* Build configuration list for PBXNativeTarget "MixDrinkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F7DCF3217EB7F7003F6EDA /* Debug */,
+				30F7DCF4217EB7F7003F6EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30F7DCBC217EB7F2003F6EDA /* Project object */;
+}
