@@ -1,0 +1,6 @@
+framework module Pods_MixDrinkUITests {
+  umbrella header "Pods-MixDrinkUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
