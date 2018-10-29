@@ -2,6 +2,13 @@
 
 XCode app and everything related to the UI is listed under MixDrinkClient, and server including scrapers and recommender code is under MixDrinkServer.
 
+Dependencies:
+Client Dependencies:
+Mac Machine and XCode
+
+Server Dependencies:
+dependencies listed under MixDrinkServer/recipe-scrapers/requirements.txt
+
 # Setup
 1. Clone the repository
 
