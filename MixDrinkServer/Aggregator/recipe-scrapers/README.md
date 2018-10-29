@@ -17,3 +17,5 @@ git://github.com/hhursev/recipe-scrapers.git
     scraper.ratingavg()
 
 Note: scraper.links() returns a dictionary object containing all of the <a> tag attributes. The attribute names are the dictionary keys.
+    
+Other example in testscraperexample.py
