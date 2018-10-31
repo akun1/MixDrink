@@ -144,48 +144,26 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="gallary of drinks youve selected AND list of suggested drinks " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssc-QA-4xV">
-                                <rect key="frame" x="44" y="339" width="270" height="280"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058819999999" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dcN-ET-1Iy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Nfk-mH-wnH">
-                        <barButtonItem key="rightBarButtonItem" title="Quiz" id="u89-7D-Zmw">
+                        <barButtonItem key="leftBarButtonItem" title="Quiz" id="gha-r7-kvg">
                             <connections>
-                                <segue destination="MRW-A0-92h" kind="show" id="lv2-ED-SZG"/>
+                                <segue destination="MRW-A0-92h" kind="show" id="vbt-sn-gCc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="My Drinks" id="u89-7D-Zmw">
+                            <connections>
+                                <segue destination="dLu-xf-taK" kind="show" id="b4g-4w-J0a"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="Kwg-s3-27y" kind="show" id="2kC-ev-Tnl"/>
-                        <segue destination="dLu-xf-taK" kind="show" id="erw-Ur-BHm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgI-DP-0oO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2047.2" y="27.436281859070466"/>
-        </scene>
-        <!--Drink View-->
-        <scene sceneID="1zC-tc-XTP">
-            <objects>
-                <viewController title="Drink View" id="Kwg-s3-27y" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="m60-h0-tY3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="vVg-mp-W6x"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QEE-EM-Ien" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2849" y="384"/>
         </scene>
         <!--Preferences Quiz-->
         <scene sceneID="JEK-7u-pQL">
@@ -245,17 +223,53 @@
         <!--My Drinks-->
         <scene sceneID="ndb-3F-pik">
             <objects>
-                <viewController title="My Drinks" id="dLu-xf-taK" sceneMemberID="viewController">
+                <viewController title="My Drinks" id="dLu-xf-taK" customClass="MyDrinksViewController" customModule="MixDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yxg-qR-aDf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5J7-5w-ZJd">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l7W-Yi-LBU">
+                                    <size key="itemSize" width="89" height="93"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="drink" id="nAd-5M-kDl">
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="89" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.91560981689999998" blue="0.96943188899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dLu-xf-taK" id="Jgq-ac-V9C"/>
+                                    <outlet property="delegate" destination="dLu-xf-taK" id="ccN-c6-5Vo"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BSR-QF-LMd" firstAttribute="trailing" secondItem="5J7-5w-ZJd" secondAttribute="trailing" id="27i-kW-dh8"/>
+                            <constraint firstItem="5J7-5w-ZJd" firstAttribute="top" secondItem="BSR-QF-LMd" secondAttribute="top" id="7vF-BB-yXn"/>
+                            <constraint firstItem="5J7-5w-ZJd" firstAttribute="leading" secondItem="BSR-QF-LMd" secondAttribute="leading" id="ZXr-PI-coo"/>
+                            <constraint firstItem="BSR-QF-LMd" firstAttribute="bottom" secondItem="5J7-5w-ZJd" secondAttribute="bottom" id="heW-9m-xtA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BSR-QF-LMd"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="5J7-5w-ZJd" id="nxD-qD-g59"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgG-lK-iN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2849" y="-331"/>
+            <point key="canvasLocation" x="2872.8000000000002" y="26.53673163418291"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xpy-dc-6mY">
@@ -298,6 +312,6 @@
         <image name="sqarelogo" width="938" height="938"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lv2-ED-SZG"/>
+        <segue reference="vbt-sn-gCc"/>
     </inferredMetricsTieBreakers>
 </document>
