@@ -25,7 +25,7 @@ dependencies listed under MixDrinkServer/recipe-scrapers/requirements.txt
 
 # Server Setup
 
-1. Run ./setup.sh to install all the server dependencies if on linux
+1. Run ./setup.sh to install all the server dependencies if on linux  
    Use ./setupmac.sh for mac (you will need Homebrew)
 
 2. sudo python3 aggregator.py
