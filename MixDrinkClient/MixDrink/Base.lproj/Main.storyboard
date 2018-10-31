@@ -156,7 +156,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dcN-ET-1Iy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="Nfk-mH-wnH"/>
+                    <navigationItem key="navigationItem" title="Home" id="Nfk-mH-wnH">
+                        <barButtonItem key="rightBarButtonItem" title="Quiz" id="u89-7D-Zmw">
+                            <connections>
+                                <segue destination="MRW-A0-92h" kind="show" id="lv2-ED-SZG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Kwg-s3-27y" kind="show" id="2kC-ev-Tnl"/>
                         <segue destination="dLu-xf-taK" kind="show" id="erw-Ur-BHm"/>
@@ -184,24 +190,53 @@
         <!--Preferences Quiz-->
         <scene sceneID="JEK-7u-pQL">
             <objects>
-                <viewController id="MRW-A0-92h" sceneMemberID="viewController">
+                <viewController id="MRW-A0-92h" customClass="QuizViewController" customModule="MixDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L1V-Di-g6P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ask questions about which dirnks they already like, ingredients they like, etc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfy-HB-INh">
-                                <rect key="frame" x="74" y="232" width="226" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r7w-bY-dHx">
+                                <rect key="frame" x="0.0" y="204" width="375" height="463"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="question" id="C3i-3m-vlJ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C3i-3m-vlJ" id="ec9-5t-nwg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.80476003149999997" blue="0.2999848001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MRW-A0-92h" id="a9P-Qx-DaU"/>
+                                    <outlet property="delegate" destination="MRW-A0-92h" id="8BF-WI-L31"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please answer the following questions so that we have a better idea of what you like!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymm-eN-jhQ">
+                                <rect key="frame" x="10" y="126" width="355" height="70"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gYj-wo-QBJ" firstAttribute="bottom" secondItem="r7w-bY-dHx" secondAttribute="bottom" id="9yn-eZ-mYb"/>
+                            <constraint firstItem="r7w-bY-dHx" firstAttribute="leading" secondItem="gYj-wo-QBJ" secondAttribute="leading" id="CwS-Vi-JsO"/>
+                            <constraint firstItem="ymm-eN-jhQ" firstAttribute="top" secondItem="gYj-wo-QBJ" secondAttribute="top" constant="10" id="RV5-bw-HWV"/>
+                            <constraint firstItem="gYj-wo-QBJ" firstAttribute="trailing" secondItem="ymm-eN-jhQ" secondAttribute="trailing" constant="10" id="WuX-Op-tXy"/>
+                            <constraint firstItem="gYj-wo-QBJ" firstAttribute="trailing" secondItem="r7w-bY-dHx" secondAttribute="trailing" id="biS-X6-zUy"/>
+                            <constraint firstItem="ymm-eN-jhQ" firstAttribute="leading" secondItem="gYj-wo-QBJ" secondAttribute="leading" constant="10" id="mFj-oI-Sts"/>
+                            <constraint firstItem="r7w-bY-dHx" firstAttribute="top" secondItem="ymm-eN-jhQ" secondAttribute="bottom" constant="8" symbolic="YES" id="rxO-S5-brG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gYj-wo-QBJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Preferences Quiz" id="hsL-NA-MUZ"/>
+                    <connections>
+                        <outlet property="tableView" destination="r7w-bY-dHx" id="GwX-uQ-mkO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBx-7P-pVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -262,4 +297,7 @@
     <resources>
         <image name="sqarelogo" width="938" height="938"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lv2-ED-SZG"/>
+    </inferredMetricsTieBreakers>
 </document>
