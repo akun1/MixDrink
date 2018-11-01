@@ -6,6 +6,15 @@ import json
 
 all_drinks = []
 save_file = 'catalog.json'
+ingredient_file = 'ingredients.json'
+ingredient_frequency = {}
+
+ingredient_names = ['strIngredient1','strIngredient2',
+    'strIngredient3','strIngredient4','strIngredient5',
+    'strIngredient6','strIngredient7','strIngredient8',
+    'strIngredient9','strIngredient10','strIngredient11',
+    'strIngredient12','strIngredient13','strIngredient14',
+    'strIngredient15',]
 
 @app.route('/')
 def hello_world():
@@ -43,6 +52,22 @@ def get_all_cocktaildb():
 
     return drink_details
 
+def get_ingredient_frequencies(drink_details):
+
+    freq = {}
+    for drink in drink_details:
+        for name in ingredient_names:
+            ingredient = drink[name]
+            if ingredient:
+                ingredient = ingredient.lower()
+                if ingredient in freq:
+                    freq[ingredient] += 1
+                else:
+                    freq[ingredient] = 1
+    
+
+    return freq
+
 if __name__ == "__main__":
 
     update_catalog = False
@@ -55,6 +80,10 @@ if __name__ == "__main__":
     else:
         with open(save_file, 'r') as fin:
             detail_list = json.load(fin)
+
+    ingredient_frequency = get_ingredient_frequencies(detail_list)
+    with open(ingredient_file, 'w') as fout:
+        json.dump(ingredient_frequency, fout)
 
     print('Cataloged ' + str(len(detail_list)) + ' drinks')
 
