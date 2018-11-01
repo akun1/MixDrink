@@ -3,6 +3,7 @@ app = Flask(__name__)
 
 import requests
 import json
+import operator
 
 all_drinks = []
 save_file = 'catalog.json'
@@ -14,7 +15,7 @@ ingredient_names = ['strIngredient1','strIngredient2',
     'strIngredient6','strIngredient7','strIngredient8',
     'strIngredient9','strIngredient10','strIngredient11',
     'strIngredient12','strIngredient13','strIngredient14',
-    'strIngredient15',]
+    'strIngredient15']
 
 @app.route('/')
 def hello_world():
@@ -23,6 +24,18 @@ def hello_world():
 @app.route('/stats')
 def stats():
     return 'I have cataloged ' + str(len(all_drinks)) + ' drinks'
+
+@app.route('/ingredient_stats')
+def ingredient_stats():
+    results = ''
+    results += 'Ingredients: ' + str(len(ingredient_frequency)) + '<br></br>'
+    results += ' Top 10<br></br>'
+    sorted_ing_freqs = list(reversed(sorted(ingredient_frequency.items(), key=operator.itemgetter(1))))
+    for i in range(0, 10):
+        results += str(sorted_ing_freqs[i]) + '<br></br>'
+
+    return results
+
 
 def get_all_cocktaildb():
     response = requests.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list')
