@@ -1,7 +1,8 @@
 ## Running Our Scraper and/or Crawler   
 
 The program is setup to run the scraper on the urls in the cocktailsurls.txt file.  
-If you want to recollect urls from allrecipes, in scrapeall.py uncomment the following line:
+If you want to recollect urls from allrecipes, essentially running the crawler,  
+in scrapeall.py uncomment the following line:
 
 #scrapercl.geturls('https://www.allrecipes.com/recipes/133/drinks/cocktails/',0)
 
