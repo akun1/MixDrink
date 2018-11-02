@@ -1,4 +1,16 @@
-## Recipe scraper for allrecipes.com
+## Running Our Scraper and/or Crawler   
+
+The program is setup to run the scraper on the urls in the cocktailsurls.txt file.  
+If you want to recollect urls from allrecipes, in scrapeall.py uncomment the following line:
+
+#scrapercl.geturls('https://www.allrecipes.com/recipes/133/drinks/cocktails/',0)
+
+Run the scraper from the terminal from directory /MixDrink/MixDrinkServer/Aggregator/recipe-scrapers/ by typing:  
+'python scrapeall.py'
+
+This will gather the urls from the text file, scrape the recipe data, and then plot the average ratings.
+
+## Developer Instructions for Using Recipe scraper for allrecipes.com / extended scraper  
 
 Original project from:
 git://github.com/hhursev/recipe-scrapers.git
@@ -19,15 +31,3 @@ git://github.com/hhursev/recipe-scrapers.git
 Note: scraper.links() returns a dictionary object containing all of the <a> tag attributes. The attribute names are the dictionary keys.
     
 Other example in testscraperexample.py
-
-## Running Given Scraper  
-
-The program is setup to run the scraper on the urls in the cocktailsurls.txt file.  
-If you want to recollect urls from allrecipes, in scrapeall.py uncomment the following line:
-
-#scrapercl.geturls('https://www.allrecipes.com/recipes/133/drinks/cocktails/',0)
-
-Run the scraper from the terminal from directory MixDrink/MixDrinkServer/Aggregator/recipe-scrapers/ by typing:  
-'python scrapeall.py'
-
-This will gather the urls from the text file, scrape the recipe data, and then plot the average ratings.
