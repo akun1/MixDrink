@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 app = Flask(__name__)
 
 import requests
@@ -9,6 +9,7 @@ all_drinks = []
 save_file = 'catalog.json'
 ingredient_file = 'ingredients.json'
 ingredient_frequency = {}
+detail_list = {}
 
 ingredient_names = ['strIngredient1','strIngredient2',
     'strIngredient3','strIngredient4','strIngredient5',
@@ -35,6 +36,10 @@ def ingredient_stats():
         results += str(sorted_ing_freqs[i]) + '<br></br>'
 
     return results
+
+@app.route('/drinks')
+def drinks():
+    return jsonify(detail_list)
 
 
 def get_all_cocktaildb():
@@ -80,6 +85,7 @@ def get_ingredient_frequencies(drink_details):
     
 
     return freq
+
 
 if __name__ == "__main__":
 
