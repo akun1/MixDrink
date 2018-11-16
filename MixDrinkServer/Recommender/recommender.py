@@ -10,16 +10,31 @@ drink_details = {}
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/recommendation')
+@app.route('/recommendation', methods=['GET', 'POST'])
 def recommendation():
     input = request.json
+    print(input)
     favorite_drinks = ['Cuba Libre', 'Gin and Tonic', 
         'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
         'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
 
+    drink_scores = {
+        'Cuba Libre' : 5.0,
+        'Gin and Tonic' : 4.5,
+        'Long Island Ice Tea' : 4.6,
+        'Espresso Martini' : 3.2,
+        'Lemon Drop' : 2.9,
+        'Manhattan' : 3.8,
+        'Negroni' : 4.1,
+        'Mulled Wine' : 1.8,
+        'Mimosa' : 3.5,
+        'Tennessee Mud' : 4.9
+    }
+
     resp = []
     for drink in drink_details:
         if drink['strDrink'] in favorite_drinks:
+            drink['rating'] = drink_scores[drink['strDrink']]
             resp.append(drink)
     return jsonify(resp)
 
