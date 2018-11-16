@@ -17,6 +17,7 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        pullSuggestions()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,15 +25,14 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         // Do any additional setup after loading the view.
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func pullSuggestions() {
+        API.loadDrinks {
+            print("finished loading")
+            DispatchQueue.main.sync {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     // MARK: UICollectionViewDataSource
     
@@ -44,15 +44,22 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 50
+        print(Me.shared.myDrinks.count())
+        return Me.shared.myDrinks.count()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? SuggestionCollectionViewCell else { return UICollectionViewCell() }
         
         // Configure the cell
         cell.layer.applySketchShadow()
         cell.layer.applyRoundedCorners()
+        
+        let drink = Me.shared.myDrinks.drinks[indexPath.row]
+        
+        cell.name.text = drink.name
+        cell.image.downloaded(from: drink.imageURL)
+        cell.percentMatch.text = drink.percentMatch
         
         return cell
     }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JZc-uq-TtK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JZc-uq-TtK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -149,7 +149,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="drink" id="Yd9-v9-RQt">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="drink" id="Yd9-v9-RQt" customClass="SuggestionCollectionViewCell" customModule="MixDrink" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="157" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -192,6 +192,11 @@
                                             <constraint firstAttribute="trailing" secondItem="dbX-IX-n08" secondAttribute="trailing" id="vXd-am-cIX"/>
                                             <constraint firstItem="j23-bR-0aR" firstAttribute="leading" secondItem="Yd9-v9-RQt" secondAttribute="leading" id="xtA-R8-ewD"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="j23-bR-0aR" id="pyX-Ld-Nei"/>
+                                            <outlet property="name" destination="kl7-cr-Fa8" id="HeV-AJ-0iN"/>
+                                            <outlet property="percentMatch" destination="Za0-dw-hYd" id="Azm-Ob-hfe"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

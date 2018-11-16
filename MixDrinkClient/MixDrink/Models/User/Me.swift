@@ -11,6 +11,7 @@ import UIKit
 class Me : NSObject {
     
     static var shared = Me()
+    var myDrinks : Drinks = Drinks()
     
     private override init() {}
 
