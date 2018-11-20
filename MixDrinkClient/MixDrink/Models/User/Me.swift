@@ -12,6 +12,7 @@ class Me : NSObject {
     
     static var shared = Me()
     var myDrinks : Drinks = Drinks()
+    var myIngrs : Ingredients = Ingredients()
     
     private override init() {}
 

@@ -32,10 +32,8 @@ class QuizTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         quizCardView.layer.applyRoundedCorners()
         quizCardView.layer.applySketchShadow()
-        questionLabel.textColor = UIColor.white
-        yesButton.setTitleColor(UIColor.white, for: .normal)
-        noButton.setTitleColor(UIColor.white, for: .normal)
-        quizCardView.backgroundColor = Theme.getThemeColorTeal()
+        questionLabel.textColor = Theme.getThemeColorTeal()
+        quizCardView.backgroundColor = UIColor.white
         
     }
     

@@ -17,6 +17,7 @@ struct Ingredient {
 
 struct Ingredients {
     var all : [Ingredient] = []
+    var isLiked : Bool = true
     init() {}
 }
 
