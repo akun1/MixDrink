@@ -28,6 +28,8 @@ class SuggestionCollectionViewCell: UICollectionViewCell {
                 Me.shared.myLikedDrinks.drinks.append(drink)
             }
         }
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
     }
     @IBAction func dislikeTapped(_ sender: Any) {
         if let drink = suggestionDrink {
@@ -35,6 +37,8 @@ class SuggestionCollectionViewCell: UICollectionViewCell {
             filteredDrinks.drinks = Me.shared.myLikedDrinks.drinks.filter({$0.name != drink.name})
             Me.shared.myLikedDrinks = filteredDrinks
         }
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
     }
     
 }

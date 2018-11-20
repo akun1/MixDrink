@@ -37,10 +37,16 @@
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0t-6l-dVa">
                                                 <rect key="frame" x="0.0" y="14.5" width="20" height="22"/>
                                                 <state key="normal" image="thumbs-down"/>
+                                                <connections>
+                                                    <action selector="dislikeTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="n0Z-ij-3zp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCx-yf-5Ld">
                                                 <rect key="frame" x="70" y="14.5" width="20" height="22"/>
                                                 <state key="normal" image="thumbs-up"/>
+                                                <connections>
+                                                    <action selector="likeTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dl8-kb-R7y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

@@ -38,4 +38,14 @@ class QuizTableViewCell: UITableViewCell {
         quizCardView.backgroundColor = UIColor.white
     }
     
+    @IBAction func likeTapped(_ sender: Any) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+    }
+    @IBAction func dislikeTapped(_ sender: Any) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+    }
+    
+    
 }
