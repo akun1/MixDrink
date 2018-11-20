@@ -93,7 +93,7 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         let screenWidth = view.frame.width
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 5, bottom: 10, right: 5)
-        layout.itemSize = CGSize(width: screenWidth/3 - 10, height: screenWidth/3)
+        layout.itemSize = CGSize(width: screenWidth/3 - 10, height: screenWidth/2)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 10
         collectionView!.collectionViewLayout = layout
