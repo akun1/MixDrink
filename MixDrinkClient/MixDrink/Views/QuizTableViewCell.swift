@@ -14,6 +14,8 @@ class QuizTableViewCell: UITableViewCell {
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
+    var questionIngr : Ingredient?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,7 +36,6 @@ class QuizTableViewCell: UITableViewCell {
         quizCardView.layer.applySketchShadow()
         questionLabel.textColor = Theme.getThemeColorTeal()
         quizCardView.backgroundColor = UIColor.white
-        
     }
     
 }

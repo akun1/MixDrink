@@ -74,11 +74,10 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         
         let drink = Me.shared.myDrinks.drinks[indexPath.row]
         
+        cell.suggestionDrink = drink
         cell.name.text = drink.name
         cell.image.downloaded(from: drink.imageURL)
         cell.percentMatch.text = "\(String(Int(100*drink.confidence)))% Confident"
-        
-        print(drink.indgredients.all)
         return cell
     }
     
@@ -129,6 +128,5 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
      
      }
      */
-    
 }
 

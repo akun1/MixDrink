@@ -13,10 +13,28 @@ class SuggestionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var percentMatch: UILabel!
     @IBOutlet weak var name: UILabel!
+    var suggestionDrink : Drink?
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()
 //        // Initialization code
 //    }
 
+    
+    @IBAction func likeTapped(_ sender: Any) {
+        if let drink = suggestionDrink {
+            let drinkNames = Me.shared.myLikedDrinks.drinks.map({$0.name})
+            if !drinkNames.contains(drink.name) {
+                Me.shared.myLikedDrinks.drinks.append(drink)
+            }
+        }
+    }
+    @IBAction func dislikeTapped(_ sender: Any) {
+        if let drink = suggestionDrink {
+            let filteredDrinks : Drinks = Drinks()
+            filteredDrinks.drinks = Me.shared.myLikedDrinks.drinks.filter({$0.name != drink.name})
+            Me.shared.myLikedDrinks = filteredDrinks
+        }
+    }
+    
 }
