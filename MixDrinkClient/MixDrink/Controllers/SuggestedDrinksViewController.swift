@@ -12,10 +12,14 @@ private let reuseIdentifier = "drink"
 
 class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        welcomeLabel.text = "Woo, it's \(getTime())! Time to drink. 🙏 Here are some drinks we think you'd love!"
+        
         setupCollectionView()
         pullSuggestions()
         
@@ -23,6 +27,19 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         // self.clearsSelectionOnViewWillAppear = false
         
         // Do any additional setup after loading the view.
+    }
+    
+    func getTime() -> String {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+        return formatter.string(from: Date())
+        
+        //return "\(hour):\(minutes)"
     }
     
     func pullSuggestions() {
@@ -59,8 +76,9 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         
         cell.name.text = drink.name
         cell.image.downloaded(from: drink.imageURL)
-        cell.percentMatch.text = drink.percentMatch
+        cell.percentMatch.text = "\(String(Int(100*drink.confidence)))% Confident"
         
+        print(drink.indgredients.all)
         return cell
     }
     

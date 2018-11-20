@@ -8,13 +8,25 @@
 
 import UIKit
 
+struct Ingredient {
+    var name : String = ""
+    init(name: String) {
+        self.name = name
+    }
+}
+
+struct Ingredients {
+    var all : [Ingredient] = []
+    init() {}
+}
+
 class Drink: NSObject {
     
     var imageURL : String = ""
     var name : String = ""
-    var indgredients : [String] = []
+    var indgredients : Ingredients = Ingredients()
     var rating : String = ""
-    var percentMatch : String = ""
+    var confidence : Float = 0.0
     
     override init() {
         super.init()
