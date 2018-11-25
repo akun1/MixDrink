@@ -1,4 +1,5 @@
 from flask import Flask
+import math
 app = Flask(__name__)
 
 @app.route('/')
@@ -43,18 +44,20 @@ def recommendation():
         'Tennessee Mud' : 0.1
     }
 
-    resp = []
-    for drink in drink_details:
-        if drink['strDrink'] in favorite_drinks:
-            drink['rating'] = drink_scores[drink['strDrink']]
-            drink['confidence'] = drink_confidences[drink['strDrink']]
-            resp.append(drink)
+    resp = simCalc(favorite_drinks)
+    #for drink in drink_details:
+    #    if drink['strDrink'] in favorite_drinks:
+    #        drink['rating'] = drink_scores[drink['strDrink']]
+    #        drink['confidence'] = drink_confidences[drink['strDrink']]
+    #        resp.append(drink)
     return jsonify(resp)
 
 #########################
 # Similarity Recommender
 #########################
 def simCalc(favorite_drinks):
+   recommended = []
+
    # Cluster favorite drinks
    fave_simscores = {}
    groupings =[]
@@ -76,6 +79,7 @@ def simCalc(favorite_drinks):
          grouplist.append(key)
          groupings.append(grouplist)
 #WIP
+   grdrinks = []
    for group in groupings:
       # Calculate similarity for each group
       groupmostsim = {}
@@ -92,8 +96,22 @@ def simCalc(favorite_drinks):
                   if fav_rating > val:
                      del groupmostsim[key]
                      groupmostsim[drink] = fav_rating
+      grdrinks.append(groupmostsim)
 
-   # Choose most similar out of each group scorelist
+
+   # Choose most similar out of each group scorelist, depending on number of groups
+   groupnum = len(groupings)
+   pergroup = math.floor(10/groupnum)
+   for group in grdrinks:
+      group_sorted = sorted(group.items(), key = operator.itemgetter(1),reverse=True)
+      idx = 1
+      for drink,score in group_sorted:
+         recommended.append(drink)
+         idx += 1
+         if idx > pergroup:
+            break
+
+   return recommended
 
 
 #####################
