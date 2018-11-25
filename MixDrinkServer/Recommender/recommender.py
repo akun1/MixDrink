@@ -90,7 +90,7 @@ def simCalc(favorite_drinks):
             if len(groupmostsim) < 10:
                # New match
                groupmostsim[drink] = fav_rating
-            else
+            else:
                # Replace worse match with this one
                for key,val in groupmostsim.items:
                   if fav_rating > val:
