@@ -66,7 +66,7 @@ def simCalc(favorite_drinks):
       # find similarity between current drink and all other favorites
       for bdrink in favorite_drinks:
          if adrink != bdrink:
-            adrink_scores[bdrink] = cosSim(adrink,bdrink)
+            adrink_scores[bdrink] = jaccScore(adrink,bdrink)
       fave_simscores[adrink] = adrink_scores
    
    # Determine groups based on similarity
