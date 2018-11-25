@@ -98,6 +98,13 @@ def simCalc(favorite_drinks):
                      groupmostsim[drink] = fav_rating
       grdrinks.append(groupmostsim)
 
+   # Weight most similar ratings with baseline recommendation
+   baselines = baseline()
+   for drinklist in grdrinks:
+      for drink,score in drinklist:
+         # (simscore + baseline)/ (max score + max rating)
+         newscore = (score + baselines[drink])/6
+         drinklist[drink] = newscore
 
    # Choose most similar out of each group scorelist, depending on number of groups
    groupnum = len(groupings)
