@@ -20,7 +20,9 @@ def hello_world():
 @app.route('/recommendation', methods=['GET', 'POST'])
 def recommendation():
 
+    # Null if method is GET or POST body is null or malformed
     if request.json:
+        # TODO: calculate recommendation if user favorite drinks is sent
         input = request.json
         print(input)
 
