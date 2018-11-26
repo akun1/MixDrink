@@ -142,13 +142,7 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
       for drink,score in drinkl.items():
          newscore = (score + baselines[drink])
          drinkl[drink] = newscore
-      # Normalize rating
-      maxscore = max(drinkl.items(), key=operator.itemgetter(1))[0]
-      minscore = min(drinkl.items(), key=operator.itemgetter(1))[0]
-      for drink,score in drinkl.items():
-         newscore = (score - drinkl[minscore])/(drinkl[maxscore]-drinkl[minscore])
-         drinkl[drink] = newscore
-   #print(baselines)
+
    groupnum = len(groupings)
    pergroup = math.floor(10/groupnum)
    recommended_scores = {}
@@ -224,6 +218,13 @@ def baseline(drink_scores,favorite_drinks,drinklist):
    for drink,ing in drinklist.items():
       if drink in drink_scores:
          baselines[drink] = mu + bx + drink_scores[drink]
+
+   # Normalize the baseline scores
+   maxscore = max(baselines.items(), key=operator.itemgetter(1))[0]
+   minscore = min(baselines.items(), key=operator.itemgetter(1))[0]
+   for drink,score in baselines.items():
+      newscore = (score - baselines[minscore])/(baselines[maxscore]-baselines[minscore])
+      baselines[drink] = newscore
 
    return baselines
 
