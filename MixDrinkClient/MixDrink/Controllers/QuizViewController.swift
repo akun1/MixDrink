@@ -27,8 +27,14 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "question", for: indexPath) as? QuizTableViewCell else { return UITableViewCell() }
         
+        let ingredients = Me.shared.myIngrs.all
+        if ingredients.count > 0 {
+            if let ingredient = ingredients.randomElement() {
+                cell.questionLabel.text = "Do you like \(ingredient.name)?"
+                return cell
+            }
+        }
         cell.questionLabel.text = "Do you love alcahol?"
-        
         return cell
     }
     

@@ -44,16 +44,20 @@ class MyDrinksViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 50
+        return Me.shared.myLikedDrinks.drinks.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MyDrinksCollectionViewCell else { return UICollectionViewCell() }
     
+        let drink = Me.shared.myLikedDrinks.drinks[indexPath.row]
         // Configure the cell
         cell.layer.applySketchShadow()
         cell.layer.applyRoundedCorners()
     
+        cell.drinkName.text = drink.name
+        cell.drinkImage.downloaded(from: drink.imageURL)
+        
         return cell
     }
     

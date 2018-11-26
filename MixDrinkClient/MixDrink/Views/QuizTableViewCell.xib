@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,45 +15,55 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="315" id="KGk-i7-Jjw" customClass="QuizTableViewCell" customModule="MixDrink" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="615" height="315"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="615" height="314.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRY-nK-Iuq">
-                        <rect key="frame" x="20" y="20" width="575" height="139.5"/>
+                        <rect key="frame" x="50" y="20" width="515" height="175"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JvM-PE-guD">
-                                <rect key="frame" x="87.5" y="38" width="400" height="63.5"/>
+                                <rect key="frame" x="57.5" y="38" width="400" height="99"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wC7-bf-lp9">
-                                        <rect key="frame" x="179" y="0.0" width="42" height="25.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wC7-bf-lp9">
+                                        <rect key="frame" x="20" y="0.0" width="360" height="47.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ags-Pn-583">
-                                        <rect key="frame" x="145" y="33.5" width="110" height="30"/>
+                                        <rect key="frame" x="155" y="47.5" width="90" height="51.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0t-6l-dVa">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="No"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0t-6l-dVa">
+                                                <rect key="frame" x="0.0" y="14.5" width="20" height="22"/>
+                                                <state key="normal" image="thumbs-down"/>
+                                                <connections>
+                                                    <action selector="dislikeTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="n0Z-ij-3zp"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCx-yf-5Ld">
-                                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="Yes"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCx-yf-5Ld">
+                                                <rect key="frame" x="70" y="14.5" width="20" height="22"/>
+                                                <state key="normal" image="thumbs-up"/>
+                                                <connections>
+                                                    <action selector="likeTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dl8-kb-R7y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="wC7-bf-lp9" firstAttribute="top" secondItem="JvM-PE-guD" secondAttribute="top" id="Fs9-4p-rKt"/>
+                                    <constraint firstItem="wC7-bf-lp9" firstAttribute="leading" secondItem="JvM-PE-guD" secondAttribute="leading" constant="20" symbolic="YES" id="Phb-05-CoS"/>
                                     <constraint firstAttribute="width" constant="400" id="cYK-YA-tiL"/>
+                                    <constraint firstItem="ags-Pn-583" firstAttribute="top" secondItem="wC7-bf-lp9" secondAttribute="bottom" id="e2t-lZ-0Gf"/>
+                                    <constraint firstAttribute="trailing" secondItem="wC7-bf-lp9" secondAttribute="trailing" constant="20" symbolic="YES" id="vXY-cb-dUa"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JvM-PE-guD" firstAttribute="centerX" secondItem="WRY-nK-Iuq" secondAttribute="centerX" id="0c5-kW-WVR"/>
-                            <constraint firstAttribute="height" constant="300" id="ab4-tj-c8u"/>
+                            <constraint firstAttribute="height" constant="175" id="ab4-tj-c8u"/>
                             <constraint firstItem="JvM-PE-guD" firstAttribute="centerY" secondItem="WRY-nK-Iuq" secondAttribute="centerY" id="n0L-PG-UP5"/>
                             <constraint firstItem="JvM-PE-guD" firstAttribute="top" secondItem="WRY-nK-Iuq" secondAttribute="top" constant="38" id="zHV-Oc-LvV"/>
                         </constraints>
@@ -62,9 +72,9 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="WRY-nK-Iuq" secondAttribute="bottom" constant="20" symbolic="YES" id="3wL-Uv-CU4"/>
                     <constraint firstItem="WRY-nK-Iuq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="6rD-Ry-9cp"/>
-                    <constraint firstAttribute="trailing" secondItem="WRY-nK-Iuq" secondAttribute="trailing" constant="20" symbolic="YES" id="QVs-bK-Swp"/>
+                    <constraint firstAttribute="trailing" secondItem="WRY-nK-Iuq" secondAttribute="trailing" constant="50" id="QVs-bK-Swp"/>
                     <constraint firstItem="WRY-nK-Iuq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="mJF-RQ-Myy"/>
-                    <constraint firstItem="WRY-nK-Iuq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="zHC-kv-hdM"/>
+                    <constraint firstItem="WRY-nK-Iuq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="zHC-kv-hdM"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -77,4 +87,8 @@
             <point key="canvasLocation" x="40.799999999999997" y="231.63418290854574"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="thumbs-down" width="20" height="20"/>
+        <image name="thumbs-up" width="20" height="20"/>
+    </resources>
 </document>

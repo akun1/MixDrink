@@ -14,6 +14,8 @@ class QuizTableViewCell: UITableViewCell {
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
+    var questionIngr : Ingredient?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,11 +34,18 @@ class QuizTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         quizCardView.layer.applyRoundedCorners()
         quizCardView.layer.applySketchShadow()
-        questionLabel.textColor = UIColor.white
-        yesButton.setTitleColor(UIColor.white, for: .normal)
-        noButton.setTitleColor(UIColor.white, for: .normal)
-        quizCardView.backgroundColor = Theme.getThemeColorTeal()
-        
+        questionLabel.textColor = Theme.getThemeColorTeal()
+        quizCardView.backgroundColor = UIColor.white
     }
+    
+    @IBAction func likeTapped(_ sender: Any) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+    }
+    @IBAction func dislikeTapped(_ sender: Any) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+    }
+    
     
 }

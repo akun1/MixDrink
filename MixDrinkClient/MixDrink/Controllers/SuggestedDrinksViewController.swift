@@ -12,11 +12,16 @@ private let reuseIdentifier = "drink"
 
 class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        welcomeLabel.text = "Woo, it's \(getTime())! Time to drink. 🙏 Here are some drinks we think you'd love!"
+        
         setupCollectionView()
+        pullSuggestions()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,15 +29,27 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         // Do any additional setup after loading the view.
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func getTime() -> String {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+        return formatter.string(from: Date())
+        
+        //return "\(hour):\(minutes)"
+    }
+    
+    func pullSuggestions() {
+        API.loadDrinks {
+            print("finished loading")
+            DispatchQueue.main.sync {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     // MARK: UICollectionViewDataSource
     
@@ -44,16 +61,23 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 50
+        print(Me.shared.myDrinks.count())
+        return Me.shared.myDrinks.count()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? SuggestionCollectionViewCell else { return UICollectionViewCell() }
         
         // Configure the cell
         cell.layer.applySketchShadow()
         cell.layer.applyRoundedCorners()
         
+        let drink = Me.shared.myDrinks.drinks[indexPath.row]
+        
+        cell.suggestionDrink = drink
+        cell.name.text = drink.name
+        cell.image.downloaded(from: drink.imageURL)
+        cell.percentMatch.text = "\(String(Int(100*drink.confidence)))% Confident"
         return cell
     }
     
@@ -68,7 +92,7 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         let screenWidth = view.frame.width
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 5, bottom: 10, right: 5)
-        layout.itemSize = CGSize(width: screenWidth/3 - 10, height: screenWidth/3)
+        layout.itemSize = CGSize(width: screenWidth/3 - 10, height: screenWidth/2)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 10
         collectionView!.collectionViewLayout = layout
@@ -104,6 +128,5 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
      
      }
      */
-    
 }
 
