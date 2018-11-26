@@ -138,12 +138,16 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
 
    # Weight most similar ratings with baseline recommendation
    baselines = baseline(drink_scores,favorite_drinks,drinklist)
-   for drinklist in grdrinks:
-      for drink,score in drinklist.items():
-         # (simscore + baseline)/ (max score + max rating)
+   for drinkl in grdrinks:
+      for drink,score in drinkl.items():
          newscore = (score + baselines[drink])
-         drinklist[drink] = newscore
-
+         drinkl[drink] = newscore
+      # Normalize rating
+      maxscore = max(drinkl.items(), key=operator.itemgetter(1))[0]
+      minscore = min(drinkl.items(), key=operator.itemgetter(1))[0]
+      for drink,score in drinkl.items():
+         newscore = (score - drinkl[minscore])/(drinkl[maxscore]-drinkl[minscore])
+         drinkl[drink] = newscore
    #print(baselines)
    groupnum = len(groupings)
    pergroup = math.floor(10/groupnum)
@@ -159,13 +163,13 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
             idx += 1
          if idx > pergroup:
             break
-   maxscore = max(recommended_scores.items(), key=operator.itemgetter(1))[0]
-   minscore = min(recommended_scores.items(), key=operator.itemgetter(1))[0]
-   normalized = {}
-   for drink,score in recommended_scores.items():
-      normalized[drink] = (score - recommended_scores[minscore])/(recommended_scores[maxscore]-recommended_scores[minscore])
+   #maxscore = max(recommended_scores.items(), key=operator.itemgetter(1))[0]
+   #minscore = min(recommended_scores.items(), key=operator.itemgetter(1))[0]
+   #normalized = {}
+   #for drink,score in recommended_scores.items():
+   #   normalized[drink] = (score - recommended_scores[minscore])/(recommended_scores[maxscore]-recommended_scores[minscore])
 
-   return normalized
+   return recommended_scores
 
 
 #####################
