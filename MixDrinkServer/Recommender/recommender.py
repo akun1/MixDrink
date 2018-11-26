@@ -3,7 +3,7 @@ import math
 import requests
 import operator
 import random
-from flask import Flask
+from flask import Flask,jsonify
 #import sys
 #sys.path.insert(0, '../Aggregator')
 #from aggregator import get_all_cocktaildb
@@ -15,8 +15,10 @@ def hello_world():
 
 @app.route('/recommendation', methods=['GET', 'POST'])
 
-def recommendation(drinklist):
-
+def recommendation():
+    drinklist = {}
+    for drink in drink_details:
+       drinklist[drink['strDrink']] = drink['allIngredients']
     #if request.json:
     #    input = request.json
     #    print(input)
@@ -62,11 +64,8 @@ def recommendation(drinklist):
 
     drink_confidences = simCalc(favorite_drinks,drink_scores,drinklist)
     resp = []
-    #for drink,score in drink_confidences.items():
-    #  resp.append(drink)
     print('RECOMMENDING: ')
     print(drink_confidences)
-    #rint(drink_confidences)
     for drink in drink_details:
         if drink['strDrink'] in drink_confidences:
             drink['rating'] = drink_scores[drink['strDrink']]
@@ -80,8 +79,6 @@ def recommendation(drinklist):
 # Similarity Recommender
 #########################
 def simCalc(favorite_drinks,drink_scores,drinklist):
-   # HOW TO GET INGREDIENTS??
-   #drinks = get_all_cocktaildb()
    recommended = []
 
    # Cluster favorite drinks
@@ -100,10 +97,8 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
    
    # Determine groups based on similarity
    for key,val in fave_simscores.items():
-      #print(val)
       grouplist = []
       for key2,val2 in val.items():
-         #print(val2)
          if val2 > 0.3:
             grouplist.append(key2)
       if(len(grouplist) > 0):
@@ -115,7 +110,6 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
    grdrinks = []
    for group in groupings:
       # Calculate similarity for each group
-      #print(group)
       groupmostsim = {}
       # Save the top ten rankings per group to make less storage
       for gdrink in group:
@@ -143,14 +137,7 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
       grdrinks.append(groupmostsim)
 
    # Weight most similar ratings with baseline recommendation
-   baselines = baseline(drink_scores,favorite_drinks)
-   #print(baselines)
-   #maxbasescore = max(baselines.items(), key=operator.itemgetter(1))[0]
-   #minbasescore = min(baselines.items(), key=operator.itemgetter(1))[0]
-   #for drink,basescore in baselines.items():
-   #   print(basescore)
-   #   baselines[drink] = (basescore - baselines[minbasescore])/(baselines[maxbasescore] - baselines[minbasescore])
-   #   print(baselines[drink])
+   baselines = baseline(drink_scores,favorite_drinks,drinklist)
    for drinklist in grdrinks:
       for drink,score in drinklist.items():
          # (simscore + baseline)/ (max score + max rating)
@@ -158,8 +145,6 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
          drinklist[drink] = newscore
 
    #print(baselines)
-   # Choose most similar out of each group scorelist, depending on number of groups
-   #print(groupings)
    groupnum = len(groupings)
    pergroup = math.floor(10/groupnum)
    recommended_scores = {}
@@ -213,7 +198,7 @@ def cosSim(adrink,bdrink):
 #######################
 # Baseline recommender
 #######################
-def baseline(drink_scores,favorite_drinks):
+def baseline(drink_scores,favorite_drinks,drinklist):
    baselines = {}
    idx = 0
    mu = 0
@@ -273,11 +258,7 @@ if __name__ == "__main__":
     response = requests.get('http://54.186.197.36/drinks')
     drink_details = response.json()
     #print(drink_details)
-    drinklist = {}
     print('Cataloged ' + str(len(drink_details)) + ' drinks')
-    for drink in drink_details:
-       drinklist[drink['strDrink']] = drink['allIngredients']
        #print(drink['strDrink'])
     #print(drinklist)
-    recommendation(drinklist)
     app.run(host="0.0.0.0", port=80)
