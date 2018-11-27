@@ -69,9 +69,9 @@ class API {
     
     static func sendFavoriteDrinks(finished: @escaping () -> Void) {
         
-        print("\n---------------")
-        print(Me.shared.myLikedDrinks.getListOfNames())
-        print("------------------\n")
+//        print("\n---------------")
+//        print(Me.shared.myLikedDrinks.getListOfNames())
+//        print("------------------\n")
         
         guard let url = URL(string: "http://35.165.13.8/recommendation") else {
             finished()
@@ -81,8 +81,11 @@ class API {
         //creating a POST request, sends parameters
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.httpBody = Data(base64Encoded: Me.shared.myLikedDrinks.getListOfNames())
-        
+        //request.httpBody = Data(base64Encoded: Me.shared.myLikedDrinks.getListOfNames())
+        request.httpBody = Me.shared.myLikedDrinks.getListOfNames().data(using: .utf8)
+        print(Me.shared.myLikedDrinks.getListOfNames())
+        print("\n----------http body:----------\n")
+        print(request.httpBody)
         
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
