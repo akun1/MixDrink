@@ -15,6 +15,7 @@ class Me : NSObject {
     var myLikedDrinks : Drinks = Drinks()
     var myIngrs : Ingredients = Ingredients()
     var myLikedIngrs : Ingredients = Ingredients()
+    var currentDrink : Drink = Drink()
     
     private override init() {}
 

@@ -22,10 +22,6 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: "toHome", sender: self)
     }
     
-    func goToQuiz() {
-        performSegue(withIdentifier: "toQuiz", sender: self)
-    }
-    
     func loadUserData() {
         print("loading user data...")
     }

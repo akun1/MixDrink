@@ -123,7 +123,6 @@
                         <viewLayoutGuide key="safeArea" id="muR-Tu-J89"/>
                     </view>
                     <connections>
-                        <segue destination="1A8-lK-cZk" kind="presentation" identifier="toQuiz" id="BIF-ne-fZc"/>
                         <segue destination="cx1-pX-8tv" kind="show" identifier="toHome" id="bci-Li-bOv"/>
                     </connections>
                 </viewController>
@@ -273,11 +272,6 @@
                         <viewLayoutGuide key="safeArea" id="dcN-ET-1Iy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Nfk-mH-wnH">
-                        <barButtonItem key="leftBarButtonItem" title="Quiz" id="gha-r7-kvg">
-                            <connections>
-                                <segue destination="MRW-A0-92h" kind="show" id="vbt-sn-gCc"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="My Drinks" id="u89-7D-Zmw">
                             <connections>
                                 <segue destination="dLu-xf-taK" kind="show" id="b4g-4w-J0a"/>
@@ -423,6 +417,54 @@
             </objects>
             <point key="canvasLocation" x="2872.8000000000002" y="26.53673163418291"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="G6r-Uu-95i">
+            <objects>
+                <viewController id="AEL-EE-QFB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="omQ-4h-P4I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8C5-fx-I8g">
+                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="0HX-Uc-mcg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-my-dAK">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.54476457330000005" blue="0.81921745970000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="acp-Gl-wPR"/>
+                                </constraints>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCq-5i-p4G">
+                                <rect key="frame" x="83" y="228" width="208" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pyc-my-dAK" firstAttribute="leading" secondItem="6pm-17-WoH" secondAttribute="leading" id="1Th-bM-HU4"/>
+                            <constraint firstItem="8C5-fx-I8g" firstAttribute="top" secondItem="6pm-17-WoH" secondAttribute="top" id="5Z7-zw-ekJ"/>
+                            <constraint firstItem="6pm-17-WoH" firstAttribute="trailing" secondItem="Pyc-my-dAK" secondAttribute="trailing" id="GAe-pf-s9y"/>
+                            <constraint firstItem="8C5-fx-I8g" firstAttribute="leading" secondItem="6pm-17-WoH" secondAttribute="leading" id="a60-E8-uNf"/>
+                            <constraint firstItem="6pm-17-WoH" firstAttribute="bottom" secondItem="Pyc-my-dAK" secondAttribute="bottom" id="dVp-j2-AEn"/>
+                            <constraint firstItem="6pm-17-WoH" firstAttribute="trailing" secondItem="8C5-fx-I8g" secondAttribute="trailing" id="qJM-hI-pj0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6pm-17-WoH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qw1-Ge-xIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3661.5999999999999" y="23.838080959520241"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="xpy-dc-6mY">
             <objects>
@@ -465,7 +507,4 @@
         <image name="thumbs-down" width="20" height="20"/>
         <image name="thumbs-up" width="20" height="20"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="vbt-sn-gCc"/>
-    </inferredMetricsTieBreakers>
 </document>
