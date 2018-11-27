@@ -53,52 +53,12 @@ def recommendation():
     drinklist = {}
     for drink in drink_details:
        drinklist[drink['strDrink']] = drink['allIngredients']
-    #if request.json:
-    #    input = request.json
-    #    print(input)
-
-
-    favorite_drinks = ['Cuba Libre', 'Gin and Tonic',
-     'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
-     'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
-    #['A Night In Old Mandalay', 'Alabama Slammer',
-    #    'Affair', 'Espresso Martini','A Furlong Too Late']
     
     drink_scores = {}
     for drink in drink_details:
       drink_scores[drink['strDrink']] = drink['rating']
-    #drink_scores = {
-    #    'Cuba Libre' : 5.0,
-    #    'Gin and Tonic' : 4.5,
-    #    'Long Island Ice Tea' : 4.6,
-    #    'Espresso Martini' : 3.2,
-    #    'Lemon Drop' : 2.9,
-    #    'Manhattan' : 3.8,
-    #    'Negroni' : 4.1,
-    #    'Mulled Wine' : 1.8,
-    #    'Mimosa' : 3.5,
-    #    'Tennessee Mud' : 4.9,
-    #     'Margarita' : 3.7,
-    #    'Pina Colada' : 4.3,
-    #    'Sparkle Wine' : 4.5
-    #}
 
-    #drink_confidences = {
-    #    'Cuba Libre' : 1.0,
-    #    'Gin and Tonic' : 0.9,
-    #    'Long Island Ice Tea' : 0.8,
-    #    'Espresso Martini' : 0.7,
-    #    'Lemon Drop' : 0.6,
-    #    'Manhattan' : 0.5,
-    #    'Negroni' : 0.4,
-    #    'Mulled Wine' : 0.3,
-    #    'Mimosa' : 0.2,
-    #    'Tennessee Mud' : 0.1
-    #}
-    
-    #print(simCalc(favorite_drinks,drink_scores,drinklist))
-
-    drink_confidences = simCalc(favorite_drinks,drink_scores,drinklist)
+    drink_confidences = simCalc(favorite_drink_names,drink_scores,drinklist)
     resp = []
     print('RECOMMENDING: ')
     print(drink_confidences)
@@ -327,7 +287,7 @@ if __name__ == "__main__":
     response = requests.get('http://54.186.197.36/drinks')
     drink_details = response.json()
     for drink in drink_details:
-      drink['rating'] = random.uniform(3.0,5.0)
+      drink['rating'] = random.uniform(1.0,5.0)
     #print(drink_details)
     print('Cataloged ' + str(len(drink_details)) + ' drinks')
        #print(drink['strDrink'])
