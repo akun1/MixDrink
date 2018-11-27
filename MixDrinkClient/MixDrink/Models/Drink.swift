@@ -13,12 +13,20 @@ struct Ingredient {
     init(name: String) {
         self.name = name
     }
+    
+    func getName() -> String {
+        return name
+    }
 }
 
 struct Ingredients {
     var all : [Ingredient] = []
     var isLiked : Bool = true
     init() {}
+    
+    func getStringOfAllNames() -> String {
+        return all.map({$0.getName()}).joined(separator: ", ")
+    }
 }
 
 class Drink: NSObject {

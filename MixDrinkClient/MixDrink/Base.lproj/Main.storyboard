@@ -446,27 +446,82 @@
                                     <action selector="dissmissProfile:" destination="AEL-EE-QFB" eventType="touchUpInside" id="q30-I4-z8t"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCq-5i-p4G">
-                                <rect key="frame" x="129" y="228" width="117" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="M7v-nP-nOe">
+                                <rect key="frame" x="20" y="240" width="335" height="179"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4DB-W6-sPI">
+                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkC-nr-JD4" userLabel="DrinkName">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCq-5i-p4G">
+                                                <rect key="frame" x="0.0" y="28.5" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="THw-Br-yez">
+                                        <rect key="frame" x="0.0" y="69" width="220.5" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence that you'll like it" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUv-Tq-zIm">
+                                                <rect key="frame" x="0.0" y="0.0" width="220.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU4-8u-1NI" userLabel="Drink Confidence">
+                                                <rect key="frame" x="0.0" y="28.5" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rhp-2N-fG9">
+                                        <rect key="frame" x="0.0" y="138" width="91" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhV-km-pRv">
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIc-jX-DQK" userLabel="Drink Ingrs">
+                                                <rect key="frame" x="0.0" y="20.5" width="91" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pyc-my-dAK" firstAttribute="leading" secondItem="6pm-17-WoH" secondAttribute="leading" id="1Th-bM-HU4"/>
+                            <constraint firstItem="6pm-17-WoH" firstAttribute="trailing" secondItem="M7v-nP-nOe" secondAttribute="trailing" constant="20" id="4Ua-2p-L8g"/>
                             <constraint firstItem="8C5-fx-I8g" firstAttribute="top" secondItem="6pm-17-WoH" secondAttribute="top" id="5Z7-zw-ekJ"/>
+                            <constraint firstItem="Pyc-my-dAK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M7v-nP-nOe" secondAttribute="bottom" id="Cdd-Wy-cLP"/>
                             <constraint firstItem="6pm-17-WoH" firstAttribute="trailing" secondItem="Pyc-my-dAK" secondAttribute="trailing" id="GAe-pf-s9y"/>
+                            <constraint firstItem="M7v-nP-nOe" firstAttribute="leading" secondItem="6pm-17-WoH" secondAttribute="leading" constant="20" id="RVk-Kw-wew"/>
                             <constraint firstItem="8C5-fx-I8g" firstAttribute="leading" secondItem="6pm-17-WoH" secondAttribute="leading" id="a60-E8-uNf"/>
                             <constraint firstItem="6pm-17-WoH" firstAttribute="bottom" secondItem="Pyc-my-dAK" secondAttribute="bottom" id="dVp-j2-AEn"/>
+                            <constraint firstItem="M7v-nP-nOe" firstAttribute="top" secondItem="8C5-fx-I8g" secondAttribute="bottom" constant="20" id="na5-Jf-dLi"/>
                             <constraint firstItem="6pm-17-WoH" firstAttribute="trailing" secondItem="8C5-fx-I8g" secondAttribute="trailing" id="qJM-hI-pj0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6pm-17-WoH"/>
                     </view>
                     <connections>
+                        <outlet property="confidenceLabel" destination="vU4-8u-1NI" id="hjw-kU-RMt"/>
                         <outlet property="drinkImage" destination="8C5-fx-I8g" id="Owm-4i-vcW"/>
+                        <outlet property="drinkIngrs" destination="xIc-jX-DQK" id="uZt-pw-pdK"/>
                         <outlet property="drinkName" destination="CCq-5i-p4G" id="5Ut-KN-7fE"/>
                     </connections>
                 </viewController>
