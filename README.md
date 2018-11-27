@@ -1,3 +1,7 @@
+# Demo Video
+
+[linkname](https://youtu.be/HaqLkxOMtHM)
+
 # MixDrink
 
 XCode app and everything related to the UI is listed under MixDrinkClient, and server including scrapers and recommender code is under MixDrinkServer.
