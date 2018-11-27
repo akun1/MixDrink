@@ -106,6 +106,13 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         collectionView!.collectionViewLayout = layout
     }
     
+    @IBAction func refreshSuggestions(_ sender: Any) {
+        API.loadDrinks {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     // MARK: UICollectionViewDelegate
     
     /*

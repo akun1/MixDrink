@@ -272,6 +272,11 @@
                         <viewLayoutGuide key="safeArea" id="dcN-ET-1Iy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Nfk-mH-wnH">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="RIi-mV-Tjo">
+                            <connections>
+                                <action selector="refreshSuggestions:" destination="eLu-va-HNz" id="Iu0-qP-gmg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="My Drinks" id="u89-7D-Zmw">
                             <connections>
                                 <segue destination="dLu-xf-taK" kind="show" id="b4g-4w-J0a"/>
