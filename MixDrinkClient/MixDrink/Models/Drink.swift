@@ -59,4 +59,12 @@ class Drinks: NSObject {
         var stringOfNames : String = names.joined(separator: ",")
         return "[" + stringOfNames + "]"
     }
+    
+    func containsDrinkWithName(drinkName: String) -> Bool {
+        return drinks.map({$0.name}).contains(drinkName)
+    }
+    
+    func setConfidenceOfDrinkWithName(drinkName: String, confidence: Double) {
+        drinks.filter({$0.name == drinkName}).first?.confidence = confidence
+    }
 }

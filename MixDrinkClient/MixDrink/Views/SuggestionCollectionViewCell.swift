@@ -47,9 +47,9 @@ class SuggestionCollectionViewCell: UICollectionViewCell {
     }
     
     func pushFavoriteDrinks() {
-        print("\n\n------------sending post now!!!!!!!")
+        print("Sending post now!")
         API.sendFavoriteDrinks {
-            print("\n\n--------------done")
+            print("Sending of favs complete")
         }
     }
     

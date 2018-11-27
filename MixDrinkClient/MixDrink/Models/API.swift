@@ -13,6 +13,8 @@ class API {
     
     static func loadDrinks(finished: @escaping () -> Void) {
         
+        var newDrinks : [Drink] = []
+        
         //url
         guard let url = URL(string: "http://35.165.13.8/recommendation") else { return }
         
@@ -29,7 +31,6 @@ class API {
                 if let data = data, let json = try JSONSerialization.jsonObject(with: data) as? [[String: Any]] {
                     for d in json {
                         let drink = Drink()
-                        print(d)
                         if let imageUrl = d["strDrinkThumb"] as? String {
                             drink.imageURL = imageUrl
                         }
@@ -49,9 +50,14 @@ class API {
                                 Me.shared.myIngrs.all.append(ingr)
                             }
                         }
-                        
-                        Me.shared.myDrinks.drinks.append(drink)
+                        newDrinks.append(drink)
                     }
+                    
+                    
+                    //each load should only have DUPES and NEW ones.
+                    Me.shared.myDrinks.drinks = Array(newDrinks.sorted(by: { (d1, d2) -> Bool in
+                        d1.confidence > d2.confidence
+                    }).prefix(10))
                     finished()
                 }
             } catch {
@@ -62,7 +68,11 @@ class API {
     }
     
     static func sendFavoriteDrinks(finished: @escaping () -> Void) {
-
+        
+        print("\n---------------")
+        print(Me.shared.myLikedDrinks.getListOfNames())
+        print("------------------\n")
+        
         guard let url = URL(string: "http://35.165.13.8/recommendation") else {
             finished()
             return
@@ -85,12 +95,13 @@ class API {
             // getting data and converting to string
             if let data = data {
                 if let response = String(data: data, encoding: .utf8) {
-                    print(response)
+                    //print(response)
                     finished()
                 }
             }
             
             }.resume()
     }
-
+    
 }
+

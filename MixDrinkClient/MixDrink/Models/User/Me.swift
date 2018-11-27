@@ -18,5 +18,7 @@ class Me : NSObject {
     var currentDrink : Drink = Drink()
     
     private override init() {}
+    
+    
 
 }

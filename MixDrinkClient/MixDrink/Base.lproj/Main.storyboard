@@ -130,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="104.8" y="-271.21439280359823"/>
         </scene>
-        <!--Home-->
+        <!--Suggested Drinks-->
         <scene sceneID="osH-Lw-xCP">
             <objects>
                 <viewController id="eLu-va-HNz" customClass="SuggestedDrinksViewController" customModule="MixDrink" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,13 +176,18 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="sqarelogo" translatesAutoresizingMaskIntoConstraints="NO" id="j23-bR-0aR">
                                                     <rect key="frame" x="0.0" y="15" width="157" height="45"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dbX-IX-n08">
                                                     <rect key="frame" x="5" y="70" width="147" height="75"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Drink Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl7-cr-Fa8">
-                                                            <rect key="frame" x="45.5" y="0.0" width="56.5" height="10.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <rect key="frame" x="44.5" y="0.0" width="58.5" height="10.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -271,7 +276,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dcN-ET-1Iy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="Nfk-mH-wnH">
+                    <navigationItem key="navigationItem" title="Suggested Drinks" id="Nfk-mH-wnH">
                         <barButtonItem key="leftBarButtonItem" title="Refresh" id="RIi-mV-Tjo">
                             <connections>
                                 <action selector="refreshSuggestions:" destination="eLu-va-HNz" id="Iu0-qP-gmg"/>
