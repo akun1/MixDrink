@@ -47,9 +47,7 @@ def recommendation():
         favorite_drink_names = ['Cuba Libre', 'Gin and Tonic',
             'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
             'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
-    
 
-   
     drinklist = {}
     for drink in drink_details:
        drinklist[drink['strDrink']] = drink['allIngredients']
@@ -146,9 +144,9 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
 
    # Weight baseline ratings with sim recommendation
    baselines = baseline(drink_scores,favorite_drinks,drinklist)
-   #for drink, score in baselines.items():
-   #   newscore = (score + jsimscores[drink])
-   #   baselines[drink] = newscore
+   for drink, score in baselines.items():
+      newscore = (score + (jsimscores[drink]*15))
+      baselines[drink] = newscore
 
    groupnum = len(groupings)
    pergroup = math.floor(10/groupnum)
@@ -263,27 +261,6 @@ def baseline(drink_scores,favorite_drinks,drinklist):
 # Bail out as soon as we find ten good matches
 
 if __name__ == "__main__":
-
-    #response = requests.get('http://54.186.197.36/drinks')
-    #drinklist = response.json()
-    #print('Cataloged ' + str(len(drinklist)) + ' drinks')
-    # for drink in drinklist:
-    #     print(drink['strDrink'])
-    #drinklist = {
-    #    'Cuba Libre' : ['vodka','lemon','gin'],
-    #    'Gin and Tonic' : ['vodka','lemon','gin'],
-    #    'Long Island Ice Tea' : ['lemon','gin','sweet tea'],
-    #    'Espresso Martini' : ['espresso','gin','vodka'],
-    #    'Lemon Drop' : ['lemon','gin','rum'],
-    #    'Manhattan' : ['lime','vodka','licorice liquor'],
-    #    'Negroni' : ['orange','vodka'],
-    #    'Mulled Wine' : ['wine','gin','lime'],
-    #    'Mimosa' : ['orange','juice','champagne'],
-    #    'Tennessee Mud' : ['coffee liquor','vodka','espresso'],
-    #    'Margarita' : ['pineapple','vodka','cherry'],
-    #    'Pina Colada' : ['coconut','vodka','cherry'],
-    #    'Sparkle Wine' : ['wine','champagne','cherry']
-    #}
     response = requests.get('http://54.186.197.36/drinks')
     drink_details = response.json()
     for drink in drink_details:
