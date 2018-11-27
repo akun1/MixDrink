@@ -1,8 +1,6 @@
-# Demo Video
-
-[linkname](https://youtu.be/HaqLkxOMtHM)
-
 # MixDrink
+
+![iOS App Demo](/MixDrink/5edc7fca320x568r (1).gif)
 
 XCode app and everything related to the UI is listed under MixDrinkClient, and server including scrapers and recommender code is under MixDrinkServer.
 
@@ -12,6 +10,10 @@ Mac Machine and XCode
 
 Server Dependencies:
 dependencies listed under MixDrinkServer/recipe-scrapers/requirements.txt
+
+# Class Demo Video
+
+[linkname](https://youtu.be/HaqLkxOMtHM)
 
 # Setup
 1. Clone the repository
