@@ -81,11 +81,20 @@ class API {
         //creating a POST request, sends parameters
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        
+        let postData = NSData(data: Me.shared.myLikedDrinks.getListOfNames().data(using: .utf8)!)
+        
         //request.httpBody = Data(base64Encoded: Me.shared.myLikedDrinks.getListOfNames())
-        request.httpBody = Me.shared.myLikedDrinks.getListOfNames().data(using: .utf8)
+        //request.httpBody = Me.shared.myLikedDrinks.getListOfNames().data(using: .utf8)
+        request.httpBody = postData as? Data
         print(Me.shared.myLikedDrinks.getListOfNames())
         print("\n----------http body:----------\n")
         print(request.httpBody)
+        
+        let headers = [
+            "Content-Type": "text/plain"
+        ]
+        request.allHTTPHeaderFields = headers
         
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
