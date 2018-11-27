@@ -36,7 +36,7 @@ class API {
                         if let rating = d["rating"] as? String {
                             drink.rating = rating
                         }
-                        if let confidence = d["confidence"] as? Float {
+                        if let confidence = d["confidence"] as? Double {
                             drink.confidence = confidence
                         }
                         if let name = d["strDrink"] as? String {
@@ -62,25 +62,16 @@ class API {
     }
     
     static func sendFavoriteDrinks(finished: @escaping () -> Void) {
-        
-        let jsonObject: [String: Any] = [
-            "drinks": "dicks"//Me.shared.myLikedDrinks.getListOfNames()
-        ]
-        
-        guard let url = URL(string: "http://35.165.13.8/recommendation") else { return }
+
+        guard let url = URL(string: "http://35.165.13.8/recommendation") else {
+            finished()
+            return
+        }
         
         //creating a POST request, sends parameters
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
-        //if sending JSON as parameters
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: []) else {
-            print("error with http body")
-            return
-        }
-        request.httpBody = httpBody
+        request.httpBody = Data(base64Encoded: Me.shared.myLikedDrinks.getListOfNames())
         
         
         let session = URLSession.shared
@@ -98,6 +89,7 @@ class API {
                     finished()
                 }
             }
+            
             }.resume()
     }
 

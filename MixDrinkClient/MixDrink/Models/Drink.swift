@@ -27,7 +27,7 @@ class Drink: NSObject {
     var name : String = ""
     var indgredients : Ingredients = Ingredients()
     var rating : String = ""
-    var confidence : Float = 0.0
+    var confidence : Double = 0.0
     
     override init() {
         super.init()
@@ -46,7 +46,9 @@ class Drinks: NSObject {
         return drinks.count
     }
     
-    func getListOfNames() -> [String] {
-        return drinks.map({$0.name})
+    func getListOfNames() -> String {
+        let names = drinks.map({$0.name})
+        var stringOfNames : String = names.joined(separator: ",")
+        return "[" + stringOfNames + "]"
     }
 }

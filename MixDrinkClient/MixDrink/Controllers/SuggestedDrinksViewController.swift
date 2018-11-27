@@ -77,7 +77,8 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         cell.suggestionDrink = drink
         cell.name.text = drink.name
         cell.image.downloaded(from: drink.imageURL)
-        cell.percentMatch.text = "\(String(Int(100*drink.confidence)))% Confident"
+        cell.percentMatch.text = "\(drink.confidence)"
+        //cell.percentMatch.text = "\(String(Float(100.0*drink.confidence)))% Confident"
         return cell
     }
     
