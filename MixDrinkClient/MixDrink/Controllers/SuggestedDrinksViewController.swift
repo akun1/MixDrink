@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 private let reuseIdentifier = "drink"
 
@@ -18,6 +19,8 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateRecs(_:)), name: Notification.Name(rawValue: "RecsUpdated"), object: nil)
+        
         welcomeLabel.text = "Woo, it's \(getTime())! Time to drink. 🙏 Here are some drinks we think you'd love!"
         
         setupCollectionView()
@@ -27,6 +30,12 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         // self.clearsSelectionOnViewWillAppear = false
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func updateRecs(_ notification: Notification) {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
     
     func getTime() -> String {

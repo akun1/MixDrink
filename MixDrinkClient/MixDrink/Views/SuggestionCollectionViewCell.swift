@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SuggestionCollectionViewCell: UICollectionViewCell {
     
@@ -50,6 +51,7 @@ class SuggestionCollectionViewCell: UICollectionViewCell {
         print("Sending post now!")
         API.sendFavoriteDrinks {
             print("Sending of favs complete")
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "RecsUpdated"), object: nil)
         }
     }
     
