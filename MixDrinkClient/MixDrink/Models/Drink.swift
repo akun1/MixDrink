@@ -45,4 +45,8 @@ class Drinks: NSObject {
     func count() -> Int {
         return drinks.count
     }
+    
+    func getListOfNames() -> [String] {
+        return drinks.map({$0.name})
+    }
 }

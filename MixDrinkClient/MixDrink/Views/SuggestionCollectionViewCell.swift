@@ -39,6 +39,11 @@ class SuggestionCollectionViewCell: UICollectionViewCell {
         }
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
+        
+        print("\n\n------------sending post now!!!!!!!")
+        API.sendFavoriteDrinks {
+            print("\n\n--------------done")
+        }
     }
     
 }
