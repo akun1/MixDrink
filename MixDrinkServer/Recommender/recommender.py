@@ -30,14 +30,25 @@ def recommendation():
     drinklist = {}
     for drink in drink_details:
        drinklist[drink['strDrink']] = drink['allIngredients']
-    #if request.json:
-    #    input = request.json
-    #    print(input)
 
+    favorite_drink_names = []
+    if request.data:
+        input = request.data.decode('ascii')
+        input = input[1:len(input)-1]
+        drink_names = input.split(',')
+        favorite_drink_names = []
+        for name in drink_names:
+            name = name.strip()
+            name = name[1:len(name)-1]
+            favorite_drink_names.append(name)
+        print(favorite_drink_names)
+    else:
+        print('Default list')
+        favorite_drink_names = ['Cuba Libre', 'Gin and Tonic',
+            'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
+            'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
+    
 
-    favorite_drinks = ['Cuba Libre', 'Gin and Tonic',
-        'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
-        'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
     
     drink_scores = {}
     #drink_scores = {
@@ -56,7 +67,7 @@ def recommendation():
     #    'Sparkle Wine' : 4.5
     #}
     for drink in drinklist:
-      drink_scores[drink] = random.uniform(3.0,5.0)
+      drink_scores[drink] = random.uniform(1.0,5.0)
 
     #drink_confidences = {
     #    'Cuba Libre' : 1.0,
@@ -73,7 +84,7 @@ def recommendation():
     
     #print(simCalc(favorite_drinks,drink_scores,drinklist))
 
-    drink_confidences = simCalc(favorite_drinks,drink_scores,drinklist)
+    drink_confidences = simCalc(favorite_drink_names,drink_scores,drinklist)
     resp = []
     print('RECOMMENDING: ')
     print(drink_confidences)
