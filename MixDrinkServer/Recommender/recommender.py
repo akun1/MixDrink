@@ -3,19 +3,53 @@ import math
 import requests
 import operator
 import random
-from flask import Flask,jsonify
+from flask import Flask, jsonify, request
 #import sys
 #sys.path.insert(0, '../Aggregator')
 #from aggregator import get_all_cocktaildb
 app = Flask(__name__)
+
+import requests
+import json
+
+drink_details = {}
+
+ingredient_names = ['strIngredient1','strIngredient2',
+    'strIngredient3','strIngredient4','strIngredient5',
+    'strIngredient6','strIngredient7','strIngredient8',
+    'strIngredient9','strIngredient10','strIngredient11',
+    'strIngredient12','strIngredient13','strIngredient14',
+    'strIngredient15']
 
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
 
 @app.route('/recommendation', methods=['GET', 'POST'])
-
 def recommendation():
+    drinklist = {}
+    for drink in drink_details:
+       drinklist[drink['strDrink']] = drink['allIngredients']
+
+    favorite_drink_names = []
+    if request.data:
+        input = request.data.decode('ascii')
+        input = input[1:len(input)-1]
+        drink_names = input.split(',')
+        favorite_drink_names = []
+        for name in drink_names:
+            name = name.strip()
+            name = name[1:len(name)-1]
+            favorite_drink_names.append(name)
+        print(favorite_drink_names)
+    else:
+        print('Default list')
+        favorite_drink_names = ['Cuba Libre', 'Gin and Tonic',
+            'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
+            'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
+    
+
+   
     drinklist = {}
     for drink in drink_details:
        drinklist[drink['strDrink']] = drink['allIngredients']
@@ -24,15 +58,15 @@ def recommendation():
     #    print(input)
 
 
-    favorite_drinks = ['A Night In Old Mandalay', 'Alabama Slammer',
-        'Affair', 'Espresso Martini','A Furlong Too Late']
-    #['Cuba Libre', 'Gin and Tonic',
-     #'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
-     #'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
+    favorite_drinks = ['Cuba Libre', 'Gin and Tonic',
+     'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
+     'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
     #['A Night In Old Mandalay', 'Alabama Slammer',
     #    'Affair', 'Espresso Martini','A Furlong Too Late']
     
     drink_scores = {}
+    for drink in drink_details:
+      drink_scores[drink['strDrink']] = drink['rating']
     #drink_scores = {
     #    'Cuba Libre' : 5.0,
     #    'Gin and Tonic' : 4.5,
@@ -48,8 +82,6 @@ def recommendation():
     #    'Pina Colada' : 4.3,
     #    'Sparkle Wine' : 4.5
     #}
-    for drink in drinklist:
-      drink_scores[drink] = random.uniform(3.0,5.0)
 
     #drink_confidences = {
     #    'Cuba Libre' : 1.0,
@@ -72,7 +104,6 @@ def recommendation():
     print(drink_confidences)
     for drink in drink_details:
         if drink['strDrink'] in drink_confidences:
-            drink['rating'] = drink_scores[drink['strDrink']]
             drink['confidence'] = drink_confidences[drink['strDrink']]
             resp.append(drink)
     #print("RECOMMENDED:")
@@ -295,6 +326,8 @@ if __name__ == "__main__":
     #}
     response = requests.get('http://54.186.197.36/drinks')
     drink_details = response.json()
+    for drink in drink_details:
+      drink['rating'] = random.uniform(3.0,5.0)
     #print(drink_details)
     print('Cataloged ' + str(len(drink_details)) + ' drinks')
        #print(drink['strDrink'])
