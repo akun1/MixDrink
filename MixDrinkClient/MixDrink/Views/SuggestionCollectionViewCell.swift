@@ -30,7 +30,10 @@ class SuggestionCollectionViewCell: UICollectionViewCell {
         }
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
+        
+        pushFavoriteDrinks()
     }
+    
     @IBAction func dislikeTapped(_ sender: Any) {
         if let drink = suggestionDrink {
             let filteredDrinks : Drinks = Drinks()
@@ -40,6 +43,10 @@ class SuggestionCollectionViewCell: UICollectionViewCell {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
+        pushFavoriteDrinks()
+    }
+    
+    func pushFavoriteDrinks() {
         print("\n\n------------sending post now!!!!!!!")
         API.sendFavoriteDrinks {
             print("\n\n--------------done")

@@ -78,7 +78,7 @@ class API {
         session.dataTask(with: request) { (data, response, error) in
             
             if let error = error {
-                print("---------------------------------------"+error.localizedDescription)
+                print(error.localizedDescription)
                 finished()
             }
             
