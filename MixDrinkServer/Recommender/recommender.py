@@ -25,8 +25,10 @@ def recommendation():
 
 
     favorite_drinks = ['Cuba Libre', 'Gin and Tonic',
-        'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
-        'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
+     'Long Island Ice Tea', 'Espresso Martini', 'Lemon Drop',
+     'Manhattan', 'Negroni', 'Mulled Wine', 'Mimosa', 'Tennessee Mud']
+    #['A Night In Old Mandalay', 'Alabama Slammer',
+    #    'Affair', 'Espresso Martini','A Furlong Too Late']
     
     drink_scores = {}
     #drink_scores = {
@@ -129,7 +131,6 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
                      if fav_rating > val:
                         tmp = key
                         newdrink = drink
-                        break
                   if newdrink != '' and newdrink not in groupmostsim:
                      groupmostsim[newdrink] = fav_rating
                      if tmp != '':
@@ -152,18 +153,30 @@ def simCalc(favorite_drinks,drink_scores,drinklist):
       for drink,score in group_sorted:
          if drink not in recommended:
             #print(drink,score)
+            if score < 0:
+               score = -1 * score
             recommended_scores[drink] = score
             recommended.append(drink)
             idx += 1
          if idx > pergroup:
             break
+
+
    #maxscore = max(recommended_scores.items(), key=operator.itemgetter(1))[0]
    #minscore = min(recommended_scores.items(), key=operator.itemgetter(1))[0]
    #normalized = {}
    #for drink,score in recommended_scores.items():
    #   normalized[drink] = (score - recommended_scores[minscore])/(recommended_scores[maxscore]-recommended_scores[minscore])
+   tmp = {}
+   idx = 0
+   baselinesort = sorted(baselines.items(), key = operator.itemgetter(1),reverse=True)
+   for drink,score in baselinesort:
+      if idx == 10:
+         break
+      tmp[drink] = score
+      idx += 1
 
-   return recommended_scores
+   return tmp
 
 
 #####################
@@ -223,8 +236,9 @@ def baseline(drink_scores,favorite_drinks,drinklist):
    maxscore = max(baselines.items(), key=operator.itemgetter(1))[0]
    minscore = min(baselines.items(), key=operator.itemgetter(1))[0]
    for drink,score in baselines.items():
-      newscore = (score - baselines[minscore])/(baselines[maxscore]-baselines[minscore])
-      baselines[drink] = newscore
+      if (baselines[maxscore]-baselines[minscore]) != 0:
+         newscore = (score - baselines[minscore])/(baselines[maxscore]-baselines[minscore])
+         baselines[drink] = newscore
 
    return baselines
 
