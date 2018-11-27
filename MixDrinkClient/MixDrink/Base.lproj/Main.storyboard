@@ -281,6 +281,7 @@
                     <connections>
                         <outlet property="collectionView" destination="EQR-Lp-WTJ" id="C2w-a3-VLo"/>
                         <outlet property="welcomeLabel" destination="HaQ-Sv-VRe" id="q2R-dB-9Zv"/>
+                        <segue destination="AEL-EE-QFB" kind="presentation" identifier="toDrinkProfileFromSuggestion" id="vpy-97-4l5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgI-DP-0oO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -411,16 +412,17 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="5J7-5w-ZJd" id="nxD-qD-g59"/>
+                        <segue destination="AEL-EE-QFB" kind="presentation" identifier="toDrinkProfileFromFav" id="PCi-0v-iwR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgG-lK-iN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2872.8000000000002" y="26.53673163418291"/>
         </scene>
-        <!--View Controller-->
+        <!--Drink Profile View Controller-->
         <scene sceneID="G6r-Uu-95i">
             <objects>
-                <viewController id="AEL-EE-QFB" sceneMemberID="viewController">
+                <viewController id="AEL-EE-QFB" customClass="DrinkProfileViewController" customModule="MixDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="omQ-4h-P4I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -440,9 +442,12 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="dissmissProfile:" destination="AEL-EE-QFB" eventType="touchUpInside" id="q30-I4-z8t"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCq-5i-p4G">
-                                <rect key="frame" x="83" y="228" width="208" height="112"/>
+                                <rect key="frame" x="129" y="228" width="117" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -460,6 +465,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6pm-17-WoH"/>
                     </view>
+                    <connections>
+                        <outlet property="drinkImage" destination="8C5-fx-I8g" id="Owm-4i-vcW"/>
+                        <outlet property="drinkName" destination="CCq-5i-p4G" id="5Ut-KN-7fE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qw1-Ge-xIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,4 +516,7 @@
         <image name="thumbs-down" width="20" height="20"/>
         <image name="thumbs-up" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vpy-97-4l5"/>
+    </inferredMetricsTieBreakers>
 </document>

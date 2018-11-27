@@ -61,7 +61,6 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        print(Me.shared.myDrinks.count())
         return Me.shared.myDrinks.count()
     }
     
@@ -84,7 +83,16 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let screenWidth = view.frame.width
         return CGSize(width: screenWidth/3, height: screenWidth/3);
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? SuggestionCollectionViewCell else { return }
+        if let drink = cell.suggestionDrink {
+            Me.shared.currentDrink = drink
+        } else {
+            Me.shared.currentDrink = Drink()
+        }
+        performSegue(withIdentifier: "toDrinkProfileFromSuggestion", sender: self)
     }
     
     

@@ -58,13 +58,14 @@ class MyDrinksViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.drinkName.text = drink.name
         cell.drinkImage.downloaded(from: drink.imageURL)
         
+        cell.drink = drink
+        
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let screenWidth = view.frame.width
         return CGSize(width: screenWidth/3, height: screenWidth/3);
-        
     }
     
     
@@ -76,6 +77,16 @@ class MyDrinksViewController: UIViewController, UICollectionViewDelegate, UIColl
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 10
         collectionView!.collectionViewLayout = layout
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MyDrinksCollectionViewCell else { return }
+        if let drink = cell.drink {
+            Me.shared.currentDrink = drink
+        } else {
+            Me.shared.currentDrink = Drink()
+        }
+        performSegue(withIdentifier: "toDrinkProfileFromFav", sender: self)
     }
 
     // MARK: UICollectionViewDelegate

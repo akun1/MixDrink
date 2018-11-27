@@ -11,4 +11,5 @@ import UIKit
 class MyDrinksCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var drinkImage: UIImageView!
     @IBOutlet weak var drinkName: UILabel!
+    var drink : Drink?
 }

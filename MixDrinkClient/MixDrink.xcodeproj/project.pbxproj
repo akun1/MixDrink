@@ -25,6 +25,7 @@
 		C02D1B08218A155800AF87C7 /* MyDrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D1B07218A155800AF87C7 /* MyDrinksViewController.swift */; };
 		C02D1B0A218A1B4200AF87C7 /* SuggestedDrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D1B09218A1B4200AF87C7 /* SuggestedDrinksViewController.swift */; };
 		C0C80DF921A3CF9800C491FE /* MyDrinksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C80DF821A3CF9800C491FE /* MyDrinksCollectionViewCell.swift */; };
+		C0C80E0721ACE39900C491FE /* DrinkProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C80E0621ACE39900C491FE /* DrinkProfileViewController.swift */; };
 		C0FED5F8219F3F2500623E52 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FED5F7219F3F2500623E52 /* API.swift */; };
 		C0FED5FA219F46AF00623E52 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FED5F9219F46AF00623E52 /* Drink.swift */; };
 		C0FED5FF219F4B4600623E52 /* SuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FED5FD219F4B4600623E52 /* SuggestionCollectionViewCell.swift */; };
@@ -81,6 +82,7 @@
 		C02D1B07218A155800AF87C7 /* MyDrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrinksViewController.swift; sourceTree = "<group>"; };
 		C02D1B09218A1B4200AF87C7 /* SuggestedDrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedDrinksViewController.swift; sourceTree = "<group>"; };
 		C0C80DF821A3CF9800C491FE /* MyDrinksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrinksCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0C80E0621ACE39900C491FE /* DrinkProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkProfileViewController.swift; sourceTree = "<group>"; };
 		C0FED5F7219F3F2500623E52 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C0FED5F9219F46AF00623E52 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		C0FED5FD219F4B4600623E52 /* SuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				C02D1AFF218A0C7800AF87C7 /* QuizViewController.swift */,
 				C02D1B07218A155800AF87C7 /* MyDrinksViewController.swift */,
 				C02D1B09218A1B4200AF87C7 /* SuggestedDrinksViewController.swift */,
+				C0C80E0621ACE39900C491FE /* DrinkProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C80E0721ACE39900C491FE /* DrinkProfileViewController.swift in Sources */,
 				C02D1B03218A0D9500AF87C7 /* QuizTableViewCell.swift in Sources */,
 				C02D1B0A218A1B4200AF87C7 /* SuggestedDrinksViewController.swift in Sources */,
 				C02BF991217FEEBF00820DD8 /* LoginViewController.swift in Sources */,
