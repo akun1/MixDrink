@@ -81,7 +81,7 @@
                                                 <rect key="frame" x="86.5" y="0.0" width="248.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
