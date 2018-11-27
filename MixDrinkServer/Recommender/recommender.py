@@ -39,7 +39,7 @@ def recommendation():
         favorite_drink_names = []
         for name in drink_names:
             name = name.strip()
-            name = name[1:len(name)-1]
+            #name = name[1:len(name)-1]
             favorite_drink_names.append(name)
         print(favorite_drink_names)
     else:
