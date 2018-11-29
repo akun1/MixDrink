@@ -3,7 +3,7 @@
 //  MixDrink
 //
 //  Created by Akash Kundu on 10/31/18.
-//  Copyright © 2018 Krista Capps. All rights reserved.
+//  Copyright © 2018 Akash Kundu. All rights reserved.
 //
 
 import UIKit
@@ -109,7 +109,7 @@ class SuggestedDrinksViewController: UIViewController, UICollectionViewDelegate,
         let screenWidth = view.frame.width
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 5, bottom: 10, right: 5)
-        layout.itemSize = CGSize(width: screenWidth/3 - 10, height: screenWidth/2)
+        layout.itemSize = CGSize(width: screenWidth/2 - 10, height: screenWidth/2)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 10
         collectionView!.collectionViewLayout = layout

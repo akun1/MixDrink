@@ -3,7 +3,7 @@
 //  MixDrink
 //
 //  Created by Akash Kundu on 11/16/18.
-//  Copyright © 2018 Krista Capps. All rights reserved.
+//  Copyright © 2018 Akash Kundu. All rights reserved.
 //
 
 import UIKit

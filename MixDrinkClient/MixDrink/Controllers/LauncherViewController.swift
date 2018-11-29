@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  MixDrink
 //
-//  Created by Krista Capps on 10/22/18.
-//  Copyright © 2018 Krista Capps. All rights reserved.
+//  Created by Akash Kundu on 10/22/18.
+//  Copyright © 2018 Akash Kundu. All rights reserved.
 //
 
 import UIKit
@@ -20,7 +20,7 @@ class LauncherViewController: UIViewController {
 
     
     func goToLogin() {
-        performSegue(withIdentifier: "toLogin", sender: self)
+        performSegue(withIdentifier: "toHome", sender: self)
     }
 
 }

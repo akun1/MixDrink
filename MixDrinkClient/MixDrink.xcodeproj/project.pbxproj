@@ -16,7 +16,6 @@
 		30F7DCE8217EB7F7003F6EDA /* MixDrinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7DCE7217EB7F7003F6EDA /* MixDrinkUITests.swift */; };
 		A9A8BC5F8F0617EB485460B5 /* Pods_MixDrinkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B6B551DE15BBE4D94B1CCE /* Pods_MixDrinkTests.framework */; };
 		C02BF98E217FE86F00820DD8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BF98D217FE86F00820DD8 /* Theme.swift */; };
-		C02BF991217FEEBF00820DD8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BF990217FEEBF00820DD8 /* LoginViewController.swift */; };
 		C02BF993217FF15E00820DD8 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BF992217FF15E00820DD8 /* Me.swift */; };
 		C02D1B00218A0C7800AF87C7 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D1AFF218A0C7800AF87C7 /* QuizViewController.swift */; };
 		C02D1B03218A0D9500AF87C7 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D1B01218A0D9500AF87C7 /* QuizTableViewCell.swift */; };
@@ -73,7 +72,6 @@
 		9C5EB3BF659006044311FF18 /* Pods_MixDrinkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MixDrinkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BE1ED2F830962DB10CF95F /* Pods-MixDrinkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixDrinkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MixDrinkTests/Pods-MixDrinkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C02BF98D217FE86F00820DD8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		C02BF990217FEEBF00820DD8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C02BF992217FF15E00820DD8 /* Me.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
 		C02D1AFF218A0C7800AF87C7 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		C02D1B01218A0D9500AF87C7 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				30F7DCC9217EB7F2003F6EDA /* LauncherViewController.swift */,
-				C02BF990217FEEBF00820DD8 /* LoginViewController.swift */,
 				C02D1AFF218A0C7800AF87C7 /* QuizViewController.swift */,
 				C02D1B07218A155800AF87C7 /* MyDrinksViewController.swift */,
 				C02D1B09218A1B4200AF87C7 /* SuggestedDrinksViewController.swift */,
@@ -466,7 +463,6 @@
 				C0C80E0721ACE39900C491FE /* DrinkProfileViewController.swift in Sources */,
 				C02D1B03218A0D9500AF87C7 /* QuizTableViewCell.swift in Sources */,
 				C02D1B0A218A1B4200AF87C7 /* SuggestedDrinksViewController.swift in Sources */,
-				C02BF991217FEEBF00820DD8 /* LoginViewController.swift in Sources */,
 				C0FED5F8219F3F2500623E52 /* API.swift in Sources */,
 				C02BF98E217FE86F00820DD8 /* Theme.swift in Sources */,
 				30F7DCCA217EB7F2003F6EDA /* LauncherViewController.swift in Sources */,
@@ -660,7 +656,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akashkundu.MixDrink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -679,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akashkundu.MixDrink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -693,14 +689,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B32NFB38L2;
+				DEVELOPMENT_TEAM = U9T496487P;
 				INFOPLIST_FILE = MixDrinkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrinkTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akashkundu.MixDrinkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -715,14 +711,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B32NFB38L2;
+				DEVELOPMENT_TEAM = U9T496487P;
 				INFOPLIST_FILE = MixDrinkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrinkTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akashkundu.MixDrinkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -736,14 +732,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B32NFB38L2;
+				DEVELOPMENT_TEAM = U9T496487P;
 				INFOPLIST_FILE = MixDrinkUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrinkUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akashkundu.MixDrinkUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -757,14 +753,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B32NFB38L2;
+				DEVELOPMENT_TEAM = U9T496487P;
 				INFOPLIST_FILE = MixDrinkUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = capps.MixDrinkUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akashkundu.MixDrinkUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
